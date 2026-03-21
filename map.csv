@@ -1,0 +1,32 @@
+0,0,Lowfield,Quiet farming village surrounded by open fields and low stone walls. The air smells of soil and livestock. You see long worn roads that lead outward from town.,0,1,1,0
+1,0,Pinecross,Tall pines loom overhead its a small village that is built along the forest path.,0,1,1,1
+0,0,Lowfield,Quiet farming village surrounded by open fields and low stone walls. The air smells of soil and livestock. You see long worn roads that lead outward from town.,0,1,1,0
+1,0,Pinecross,Tall pines loom overhead its a small village that is built along the forest path.,0,1,1,1
+2,0,Wayfarer Rest,An old roadside settlement that borders the forest and an impassible mountain in the distance to the East.,0,1,1,1
+5,0,Aurelian River,A wide steady river flowing with quiet strength. The water reflects the sky and crossing without a boat would be dangerous.,0,1,1,0
+0,1,Deepwood Forest, Dense trees block much of the sunlight here. The forest feels old and watchful every sound echoes longer than expected.,1,0,1,0
+1,1,Deepwood Forest,Dense trees block much of the sunlight here. The forest feels old and watchful every sound echoes longer than expected.,1,0,1,1
+2,1,Rivergate,A fortified river town controlling the main crossing. Guards watch each ferry carefully as people come and go through the river town.,1,1,0,1
+3,1,Mountain, A large mountain looms overhead. It doesnt look like you can pass through here.,0,0,0,0
+4,1,Mountain,A large mountain looms overhead. It doesnt look like you can pass through here.,0,0,0,0
+5,1,Aurelian River,A wide steady river flowing with quiet strength. The water reflects the sky and crossing without a boat would be dangerous.,1,1,1,0
+0,2,Aurelian River,A wide steady river flowing with quiet strength. The water reflects the sky and crossing without a boat would be dangerous.,0,0,0,0
+1,2,Aurelian River,A wide steady river flowing with quiet strength. The water reflects the sky and crossing without a boat would be dangerous.,0,0,0,0
+2,2,Aurelian River,A wide steady river flowing with quiet strength. The water reflects the sky and crossing without a boat would be dangerous.,1,1,0,0
+3,2,Aurelian River, A wide steady river flowing with quiet strength. The water reflects the sky and crossing without a boat would be dangerous.,0,0,0,0
+4,2,Aurelian River,A wide steady river flowing with quiet strength. The water reflects the sky and crossing without a boat would be dangerous.,0,0,0,0
+0,3,Misty Mire,A damp fog covered swamp where the ground squelches beneath your feet. Strange plants grow here as the mixture of swamp water and the nearby Aurelian River run together.,0,1,1,0
+1,3,Windrest,A fishing village that has quite a few inns. It seems people like to come here when they require fish.,0,1,1,1
+2,3,Stonehaven,A sturdy town of stone buildings and cobbled streets. It seems more advanced then other surrounding towns. They seem to have used the rocks from the nearby mountains to build lavish buildings.,1,1,1,1
+3,3,Hollowspire, A town bordering Kings reach and the Aurelian River. You notice guard activity throughout the town as they monitor the river and its people.,0,1,1,1
+4,3,Kings reach,The elevated district of the kingdoms city. Towers and banners rise above the surrounding land displaying the power of the crown.,0,1,0,1
+0,4,Whisperden,You look around and see a few caves. They say you can hear the whispers of other travelers that passed through here.,1,1,1,0
+1,4,Latchmoor, Latchmoor has an weird aura about it. You only see abandoned houses and the stench of decay. You dont find anything wrong with the village but it looks abandoned.,1,1,1,1
+2,4, Brindlewood,An older town that didnt view Stonehaven as using stone wisely. They kept to the old ways of using wood and planks. The town feels small and not very lively.,1,1,1,1
+3,4,Thornfield,Thornfield is a farming village surrounded by fields of tough thorny bush. Low fence lines the road and the land looks difficult but well worked.,1,1,1,1
+4,4,Kings reach,The bustling lower portion of the city. Filled with markets and homes and a few workshops. The streets are crowded and loud.,1,1,0,1
+0,5,Grimpeak,Grimpeak is a small mountain village clinging to steep rocky slopes. Cold winds blow constantly and the stone buildings huddle close together for shelter.,1,0,1,0
+1,5,Ashcrag,Ashcrag is a bleak and windy village surrounded by dark stone and ash covered ground. You dont seem to see anyone around.,1,0,1,1
+2,5,Coldspire,Coldspire seems to have a single hut. You see smoke coming from the location along with a dim light. The ground is covered in black rock and snow.,1,0,1,1
+3,5,Pinefall Woods, A cold forest at the edge of the mountains. Fallen pine needles carpet the ground. The air smells fresh.,1,0,1,1
+4,5,Pinefall woods,A cold forest that seems to extend beyond the border of the mountains. Fallen pine needles carpet the ground. The air gets more stale the further you go.,1,0,0,1
