@@ -112,7 +112,7 @@ public class MapBlock
 		}
 		
 	}
-	public Item.removeItem(String i)
+	public Item removeItem(String i)
 	{
 		for(int x = 0; x < itemsHere.size(); x++)
 		{

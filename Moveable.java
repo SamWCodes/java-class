@@ -1,10 +1,10 @@
 
 public class Moveable extends Character
 {
-	public Moveable(String n, String d, int x, int y, boolean c)
+	public Moveable(String n, String d, int x, int y, boolean c, int hp, int s, int i, int dex, int a)
 	{
 		
-		super(n,d,x,y,true,c);
+		super(n,d,x,y,true,c,hp,s,i,dex,a);
 		
 		//System.out.println("Moveable " + name + " Created");
 	}
@@ -39,14 +39,14 @@ public class Moveable extends Character
 			//East
 			if(here.go(Direction.EAST)) 
 			{
-				ypos++;
+				xpos++;
 			}
 			break;
 		case 4:
 			//West
 			if(here.go(Direction.WEST)) 
 			{
-				ypos--;
+				xpos--;
 			}
 			break;
 		default:

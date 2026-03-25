@@ -19,7 +19,7 @@ public Map(int x, int y, String fileName)
 	for(int X = 0; X < maxX; X++) //fill map blocks
 	{
 		
-		for(int Y = 0; Y < maxX; Y++) 
+		for(int Y = 0; Y < maxY; Y++) 
 		{
 			map[X][Y] = new MapBlock(); //fill map blocks
 		}

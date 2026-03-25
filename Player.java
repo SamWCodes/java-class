@@ -5,9 +5,9 @@ public class Player extends Character
 	
 	Scanner scan = new Scanner(System.in);
 	
-	public Player(String n, String d, int x, int y)
+	public Player(String n, String d, int x, int y, int hp, int s, int i, int dex, int a)
 	{
-		super(n,d,x,y,true,true);
+		super(n,d,x,y,true,true,hp,s,i,dex,a);
 		
 		//System.out.println("Player " + name + " Created");
 	}
@@ -31,6 +31,9 @@ public class Player extends Character
 		
 		switch(command)
 		{
+		case 'I': //need to write code to list inventory
+			showItems();
+			break;
 		case 'N':
 			if(here.go(Direction.NORTH)) 
 			{
@@ -77,6 +80,7 @@ public class Player extends Character
 			
 			break;
 		case 'D': //Drop Item
+			//Need to fill this out still.
 			
 			
 			break;
@@ -89,6 +93,15 @@ public class Player extends Character
 		}
 		
 		return true;
+	}
+	
+	public void showItems()
+	{
+		System.out.println("Inventory");
+		for (int x = 0; x < inventory.size(); x++)
+		{
+			System.out.println("There is a " + inventory.get(x).getName() + " here.");
+		}
 	}
 	
 	private String prompt()

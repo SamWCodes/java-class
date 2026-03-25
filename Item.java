@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 public class Item
 {
@@ -29,11 +33,42 @@ public class Item
 		value = v;
 	}
 	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public String getDesc()
+	{
+		return desc;
+	}
+	
+	public short getOffense()
+	{
+		return offense;
+	}
+	
+	public short getDefense()
+	{
+		return defense;
+	}
+	
+	public double getValue()
+	{
+		return value;
+	}
+	
+	public static void LoadItems(String fileName, Map m, Character[] p)
+	{
+
+	try
+	{
+		FileReader fr = new FileReader(fileName);
+		BufferedReader br = new BufferedReader(fr);
+	
 	//Need accessors to get data
 	
 	//need accessors to retrieve data
-	
-	//need to figure out where this goes below 
 	
 	String line;
 	String splitBy = ",";
@@ -69,6 +104,13 @@ public class Item
 		}
 	}
 	
+	br.close();
+	}
+	catch(IOException e)
+	{
+	    System.out.println("File Error: " + fileName);
+	}
 	
+	}
 	
 }

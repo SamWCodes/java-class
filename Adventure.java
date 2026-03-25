@@ -13,9 +13,9 @@ public class Adventure
 		
 		Boolean playing = true;
 		
-		String mapFile = "../data/map.csv";
-		String charFile = "../data/characters.csv";
-		String itemFile = "../data/items.csv";
+		String mapFile = "./data/map.csv";
+		String charFile = "./data/characters.csv";
+		String itemFile = "./data/items.csv";
 		
 		Map map = new Map(maxX,maxY,mapFile);
 		Character[] profile = new Character[numChars];

@@ -15,12 +15,13 @@ public abstract class Character
 	/*
 	String race;
 	String cClass;
+	*/
 	int hitPoints;
 	int strength;
 	int intelligence;
 	int dexterity;
 	int armor;
-	*/
+	
 	boolean moveable;
 	boolean combative;
 	
@@ -68,7 +69,7 @@ public abstract class Character
 		
 	}
 	
-	public Character(String n, String d, int x, int y, boolean m, boolean c)
+	public Character(String n, String d, int x, int y, boolean m, boolean c, int hp, int s, int i, int dex, int a)
 	{
 		name = n;
 		description = d;
@@ -76,6 +77,11 @@ public abstract class Character
 		ypos = y;
 		moveable = m;
 		combative = c;
+		hitPoints = hp;
+		strength = s;
+		intelligence = i;
+		dexterity = dex;
+		armor = a;
 		
 		//System.out.println(name + " Created"); 
 	}
@@ -116,7 +122,11 @@ public abstract class Character
 11 - pType (player/moveable/immoveable)
 12 - combative;
 				 */
-				
+				int hitPoints = Integer.parseInt(data[6]);
+				int strength = Integer.parseInt(data[7]);
+				int dexterity = Integer.parseInt(data[8]);
+				int intelligence = Integer.parseInt(data[9]);
+				int armor = Integer.parseInt(data[10]);
 				int pType = Integer.parseInt(data[11]);
 				boolean combative = (Integer.parseInt(data[12]) > 0)?true:false;
 				
@@ -124,17 +134,17 @@ public abstract class Character
 				{
 				case 0:
 					//Immoveable
-					Immoveable i = new Immoveable(name,description,xpos,ypos,combative);
+					Immoveable i = new Immoveable(name,description,xpos,ypos,combative, hitPoints, strength, dexterity, intelligence, armor);
 					profile[++count] = i;
 					break;
 				case  1:
 					//Moveable
-					Moveable m = new Moveable(name,description,xpos,ypos,combative);
+					Moveable m = new Moveable(name,description,xpos,ypos,combative, hitPoints, strength, dexterity, intelligence, armor);
 					profile[++count] = m;
 					break;
 				case 2:
 					//Player
-					Player p = new Player(name,description,xpos,ypos);
+					Player p = new Player(name,description,xpos,ypos, hitPoints, strength, dexterity, intelligence, armor);
 					profile[0] = p;
 					break;
 				default:
