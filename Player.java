@@ -27,7 +27,11 @@ public class Player extends Character
 		
 		char command = response.toUpperCase().charAt(0);
 		String[] data = response.split(" ",2);
-		String obj = data[1]; //other words after command
+		String obj = "";
+		if(data.length > 1)
+		{
+			obj = data[1];//other words after command
+		}
 		
 		switch(command)
 		{
@@ -80,9 +84,20 @@ public class Player extends Character
 			
 			break;
 		case 'D': //Drop Item
+			if(obj.equals(""))
+			{
+				System.out.println("What item would you like to drop?");
+			}
+			else
+			{
+				Item dropped = dropItem(obj);
+				if(dropped != null)
+				{
+					here.itemsHere.add(dropped);
+					System.out.println("You dropped " + dropped.getName() + ".");
+				}
+			}
 			//Need to fill this out still.
-			
-			
 			break;
 		case 'Q': //Quit Game
 			return false;

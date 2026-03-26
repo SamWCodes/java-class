@@ -92,6 +92,22 @@ public abstract class Character
 		inventory.add(here.removeItem(itemName));
 	}
 	
+	public Item dropItem(String itemName)
+	{
+		for(int x = 0; x < inventory.size(); x++)
+		{
+			if(inventory.get(x).getName().equalsIgnoreCase(itemName))
+			{
+				System.out.println("You no longer have the " + itemName + ".");
+				return inventory.remove(x);
+			}
+		}
+	
+	System.out.println("You no longer have " + itemName + ".");
+	return null;
+	
+	}
+	
 	public static void initChars(Character[] profile, String fileName)
 	{
 		try //catches file errors
