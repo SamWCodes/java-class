@@ -118,11 +118,9 @@ public class MapBlock
 		{
 			if(itemsHere.get(x).getName().equalsIgnoreCase(i))
 			{
-				System.out.println("You now have the " + itemsHere.get(x).getName());
 				return itemsHere.remove(x);
 			}
 		}
-		System.out.println("There is no " + i + " here.");
 		return null;
 	}
 }

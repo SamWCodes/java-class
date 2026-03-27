@@ -89,7 +89,13 @@ public abstract class Character
 	public void getItem(String itemName, MapBlock here) 
 	{
 		//remove item from mapblock and add to our inventory
-		inventory.add(here.removeItem(itemName));
+		
+		Item i = here.removeItem(itemName);
+		
+		if(i != null)
+		{
+			inventory.add(i);
+		}
 	}
 	
 	public Item dropItem(String itemName)

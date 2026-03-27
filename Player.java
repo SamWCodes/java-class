@@ -13,6 +13,24 @@ public class Player extends Character
 	}
 	
 	@Override
+	public void getItem(String itemName, MapBlock here) 
+	{
+		//remove item from mapblock and add to our inventory
+		
+		Item i = here.removeItem(itemName);
+		
+		if(i != null)
+		{
+			inventory.add(i);
+			System.out.println("You now have the " + itemName);
+		}
+		else
+		{
+			System.out.println("there is no " + itemName + " here.");
+		}
+	}
+	
+	@Override
 	public boolean move(Character[] profile, Map m)
 	{
 		MapBlock here = m.map[xpos][ypos];
