@@ -102,6 +102,11 @@ public class Player extends Character
 			
 			break;
 		case 'D': //Drop Item
+			
+			//System.out.println("Dropping " + obj);  Can we use this line of code instead?
+			//dropItem(obj, here); Can we use this line of code instead?
+			
+			
 			if(obj.equals(""))
 			{
 				System.out.println("What item would you like to drop?");
@@ -115,6 +120,7 @@ public class Player extends Character
 					System.out.println("You dropped " + dropped.getName() + ".");
 				}
 			}
+			
 			//Need to fill this out still.
 			break;
 		case 'Q': //Quit Game
