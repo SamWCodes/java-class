@@ -63,6 +63,60 @@ public abstract class Character
 		}
 	}
 	
+	protected Character findCombativeTarget(Character[] profile)
+	{
+		for(int x=1; x <= count; x++)
+		{
+			if(profile[x] != null &&
+					profile[x].isAlive() &&
+					profile[x].combative &&
+					isHere(profile[x]))
+			{
+				return profile[x];
+			}
+		}
+		return null;
+	}
+	
+	protected boolean attackCombativeTargets(Character[] profile, Map m)
+	{
+		boolean attackedAnything = false;
+		
+		for(int x = 1; x <= count; x++)
+		{
+			if(profile[x] != null &&
+					profile[x].isAlive() &&
+					profile[x].combative &&
+					isHere(profile[x]))
+			{
+				attack(profile[x], m);
+				attackedAnything = true;
+			}
+		}
+		return attackedAnything;
+	}
+	
+	protected boolean isAlive()
+	{
+		return hitPoints > 0;
+	}
+	
+	protected void dropAllItems(MapBlock here)
+	{
+		while(inventory.size() > 0)
+		{
+			here.itemsHere.add(inventory.remove(0));
+		}
+	}
+	
+	protected void kill(Map m)
+	{
+		name = "Body of " + name;
+		moveable = false;
+		combative = false;
+		dropAllItems(m.map[xpos][ypos]);
+	}
+	
 	//constructor
 	public Character()
 	{
@@ -98,20 +152,94 @@ public abstract class Character
 		}
 	}
 	
-	public Item dropItem(String itemName)
+	public void dropItem(String itemName, MapBlock here)
 	{
 		for(int x = 0; x < inventory.size(); x++)
 		{
 			if(inventory.get(x).getName().equalsIgnoreCase(itemName))
 			{
-				System.out.println("You no longer have the " + itemName + ".");
-				return inventory.remove(x);
+				Item dropped = inventory.remove(x);
+				here.itemsHere.add(dropped);
+				System.out.println("You no longer have the " + dropped.getName() + ".");
+				return;
+				
 			}
 		}
 	
 	System.out.println("You no longer have " + itemName + ".");
-	return null;
 	
+	
+	}
+	
+	protected boolean isAlive1()
+	{
+		return hitPoints > 0;
+	}
+	
+	protected Character findTarget(Character[] profile, String targetName)
+	{
+		for(int x = 1; x <= count; x++)
+		{
+			if(profile[x] != null &&
+				profile[x].isAlive() &&
+				isHere(profile[x]) &&
+				profile[x].name.equalsIgnoreCase(targetName))
+			{
+				return profile[x];
+			}
+		}
+		return null;
+	}
+	
+	protected void takeDamage(int damage)
+	{
+		hitPoints -= damage;
+		
+		if(hitPoints < 0)
+		{
+			hitPoints = 0;
+		}
+	}
+	
+	protected void attack(Character target, Map m)
+	{
+		int hitRoll = Die.roll(20);
+		
+		System.out.println(name + " attacks " + target.name + ".");
+		System.out.println("Hit roll: " + hitRoll + " vs armor " + target.armor);
+		
+		if(hitRoll >= target.armor)
+		{
+			int damage;
+			
+			if (strength > 1)
+			{
+				damage = Die.roll(strength);
+			}
+			else
+			{
+				damage = 1;
+			}
+			
+			System.out.println("Hit for " + damage + " damage.");
+			
+			target.hitPoints -= damage;
+			
+			if(target.hitPoints <= 0)
+			{
+				target.hitPoints = 0;
+				target.kill(m);;
+				System.out.println(target.name + " is dead.");
+			}
+			else
+			{
+				System.out.println(target.name + " has " + target.hitPoints + " hit points left.");
+			}
+		}
+		else
+		{
+			System.out.println(name + " misses " + target.name + ".");
+		}
 	}
 	
 	public static void initChars(Character[] profile, String fileName)

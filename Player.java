@@ -98,30 +98,18 @@ public class Player extends Character
 			break;
 		case 'G': //Get Item
 			System.out.println("Getting " + obj);
-			getItem(obj, here);
-			
+			getItem(obj, here);	
 			break;
 		case 'D': //Drop Item
-			
-			//System.out.println("Dropping " + obj);  Can we use this line of code instead?
-			//dropItem(obj, here); Can we use this line of code instead?
-			
-			
-			if(obj.equals(""))
-			{
-				System.out.println("What item would you like to drop?");
-			}
-			else
-			{
-				Item dropped = dropItem(obj);
-				if(dropped != null)
-				{
-					here.itemsHere.add(dropped);
-					System.out.println("You dropped " + dropped.getName() + ".");
-				}
-			}
-			
+			System.out.println("Dropping " + obj);
+			dropItem(obj, here);
 			//Need to fill this out still.
+			break;
+		case 'A': //Attack
+			if(!attackCombativeTargets(profile, m))
+			{
+				System.out.println("There is nothing here to attack.");
+			}
 			break;
 		case 'Q': //Quit Game
 			return false;

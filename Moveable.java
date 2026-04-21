@@ -15,6 +15,11 @@ public class Moveable extends Character
 		
 		boolean stillAlive = true;
 		
+		if(!moveable || !isAlive())
+		{
+			return stillAlive;
+		}
+		
 		MapBlock here = m.map[xpos][ypos];
 		
 		Die d = new Die();
