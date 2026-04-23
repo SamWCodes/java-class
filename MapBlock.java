@@ -9,6 +9,8 @@ public class MapBlock
 	private int S;
 	private int E;
 	private int W;
+	private String yesMsg;
+	private String noMsg;
 	
 	public static int count;
 	
@@ -22,9 +24,11 @@ public class MapBlock
 		S = 0;
 		E = 0;
 		W = 0;
+		yesMsg = "NA";
+		noMsg = "NA";
 	}
 	
-	public MapBlock(String t, String d, int n, int s, int e, int w) //constructor that sets data equal to header
+	public MapBlock(String t, String d, int n, int s, int e, int w, String yes, String no) //constructor that sets data equal to header
 	{
 		title = t;
 		description = d;
@@ -32,39 +36,76 @@ public class MapBlock
 		S = s;
 		E = e;
 		W = w;
+		yesMsg = yes;
+		noMsg = no;
 	}
 	
-	public boolean go(Direction d)
+	public boolean go(Direction d, Character c)
 	{
+		int doorValue = 0;
+		
 		switch(d)
 		{
 		case Direction.NORTH:
-			if(N == 1)
-			{
-				return true;
-			}
+			doorValue = N;
 			break;
 		case Direction.SOUTH:
-			if(S == 1)
-			{
-				return true;
-			}
+			doorValue = S;
 			break;
 		case Direction.EAST:
-			if(E == 1)
-			{
-				return true;
-			}
+			doorValue = E;
 			break;
 		case Direction.WEST:
-			if(W == 1)
-			{
-				return true;
-			}
+			doorValue = W;
 			break;
 		}
-		return false;
+		
+		if(doorValue == 1)
+		{
+			return true;
+		}
+		
+		if(doorValue == 0)
+		{
+			if(c instanceof Player)
+			{
+				if(noMsg.equalsIgnoreCase("NA"))
+				{
+					System.out.println("You cannot cross");
+				}
+				else
+				{
+					System.out.println(noMsg);
+				}
+			}
 			
+			return false;
+			
+		}
+		
+		if(c.hasItem(doorValue))
+		{
+			if(c instanceof Player && !yesMsg.equalsIgnoreCase("NA"))
+			{
+				System.out.println(yesMsg);
+			}
+			
+			return true;
+		}
+		
+		if(c instanceof Player)
+		{
+			if(noMsg.equalsIgnoreCase("NA"))
+			{
+				System.out.println("You cannot cross");
+			}
+			else
+			{
+				System.out.println(noMsg);
+			}
+		}
+		
+		return false;
 	}
 	
 	//getters

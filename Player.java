@@ -57,43 +57,27 @@ public class Player extends Character
 			showItems();
 			break;
 		case 'N':
-			if(here.go(Direction.NORTH)) 
+			if(here.go(Direction.NORTH, this)) 
 			{
 				ypos--;
 			}
-			else
-			{
-				System.out.println("The way is shut");
-			}
 			break;
 		case 'S':
-			if(here.go(Direction.SOUTH)) 
+			if(here.go(Direction.SOUTH, this)) 
 			{
 				ypos++;
 			}
-			else
-			{
-				System.out.println("The way is shut");
-			}
 			break;
 		case 'E':
-			if(here.go(Direction.EAST)) 
+			if(here.go(Direction.EAST, this)) 
 			{
 				xpos++;
 			}
-			else
-			{
-				System.out.println("The way is shut");
-			}
 			break;
 		case 'W':
-			if(here.go(Direction.WEST)) 
+			if(here.go(Direction.WEST, this)) 
 			{
 				xpos--;
-			}
-			else
-			{
-				System.out.println("The way is shut");
 			}
 			break;
 		case 'G': //Get Item

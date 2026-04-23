@@ -46,8 +46,10 @@ public Map(int x, int y, String fileName)
 			int s = Integer.parseInt(data[5]);
 			int e = Integer.parseInt(data[6]);
 			int w = Integer.parseInt(data[7]);
+			String yesMsg = data[8];
+			String noMsg = data[9];
 			
-			map[xpos][ypos] = new MapBlock(title,description,n,s,e,w);
+			map[xpos][ypos] = new MapBlock(title,description,n,s,e,w,yesMsg,noMsg);
 			
 		}
 		

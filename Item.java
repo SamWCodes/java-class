@@ -9,15 +9,14 @@ public class Item
 	//need to create my own code down below - do not AI generate, you can get help with it 
 	//but you need to create your own code instead of AI
 
-	//public static int masterKeyID = 2;
+	public static int masterKeyID = 2;
 	
 	private String name;
 	private String desc;
 	private short offense;
 	private short defense;
 	private double value;
-	
-	//public int keyID;
+	private int keyID;
 	
 	public Item()
 	{
@@ -31,6 +30,8 @@ public class Item
 		offense = of;
 		defense = de;
 		value = v;
+		keyID = masterKeyID;
+		masterKeyID++;
 	}
 	
 	public String getName()
@@ -56,6 +57,11 @@ public class Item
 	public double getValue()
 	{
 		return value;
+	}
+	
+	public int getKeyID()
+	{
+		return keyID;
 	}
 	
 	public static void LoadItems(String fileName, Map m, Character[] p)

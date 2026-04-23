@@ -101,6 +101,18 @@ public abstract class Character
 		return hitPoints > 0;
 	}
 	
+	protected boolean hasItem(int itemID)
+	{
+		for(int x = 0; x < inventory.size(); x++)
+		{
+			if(inventory.get(x).getKeyID() == itemID)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	protected void dropAllItems(MapBlock here)
 	{
 		while(inventory.size() > 0)
@@ -171,10 +183,6 @@ public abstract class Character
 	
 	}
 	
-	protected boolean isAlive1()
-	{
-		return hitPoints > 0;
-	}
 	
 	protected Character findTarget(Character[] profile, String targetName)
 	{
@@ -228,7 +236,7 @@ public abstract class Character
 			if(target.hitPoints <= 0)
 			{
 				target.hitPoints = 0;
-				target.kill(m);;
+				target.kill(m);
 				System.out.println(target.name + " is dead.");
 			}
 			else

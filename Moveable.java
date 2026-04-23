@@ -27,7 +27,7 @@ public class Moveable extends Character
 		{
 		case 1:
 			//North
-			if(here.go(Direction.NORTH)) 
+			if(here.go(Direction.NORTH, this)) 
 			{
 				ypos--;
 			}
@@ -35,21 +35,21 @@ public class Moveable extends Character
 			break;
 		case 2:
 			//South
-			if(here.go(Direction.SOUTH)) 
+			if(here.go(Direction.SOUTH, this)) 
 			{
 				ypos++;
 			}
 			break;
 		case 3:
 			//East
-			if(here.go(Direction.EAST)) 
+			if(here.go(Direction.EAST, this)) 
 			{
 				xpos++;
 			}
 			break;
 		case 4:
 			//West
-			if(here.go(Direction.WEST)) 
+			if(here.go(Direction.WEST, this)) 
 			{
 				xpos--;
 			}
